@@ -65,6 +65,9 @@ public class Televisao
     }
 
     // Volume
+    // Liga/desliga
+
+    // Volume
     public void AumentarVolume()
     {
         if (!Estado) return;
@@ -98,5 +101,9 @@ public class Televisao
         if (!Estado) return;
         _mute = !_mute;
         Console.WriteLine(_mute ? "TV em modo mudo." : $"Mudo desativado. Volume: {Volume}");
+        if (!Estado) return;
+        if (Volume < VOL_MAX) Volume++;
+        else Console.WriteLine("Volume já está no máximo!");
+        Console.WriteLine($"Volume atual: {Volume}");
     }
 }
